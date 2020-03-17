@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 from random import uniform
 
-RECORD_LINK = """https://vafs.nus.edu.sg/adfs/oauth2/authorize?response_type=code&client_id=97F0D1CACA7D41DE87538F9362924CCB-184318&resource=sg_edu_nus_oauth&redirect_uri=https%3A%2F%2Fmyaces.nus.edu.sg%3A443%2Fhtd%2Fhtd"""
+RECORD_LINK = """https://myaces.nus.edu.sg/htd/htd?loadPage=dlytemperature"""
 PATH_TO_CHROME_DRIVER = "./chromedriver.exe"
 
 def main():
@@ -34,6 +34,9 @@ def generate_random_temp():
 
 
 def login(driver, username, password):
+    if driver.current_url.split("/")[2] != 'vafs.nus.edu.sg':
+        # Check that we are on the login page, if not skip
+        return
     username_elem = driver.find_element_by_id("userNameInput")
     username_elem.clear()
     username_elem.send_keys(username)

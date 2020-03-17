@@ -1,5 +1,9 @@
 # Auto Temperature Recorder
 
+### Disclaimer
+
+This tool does not encourage non-compliance of NUS policies - it merely automates the process of submitting temperatures for the day.
+
 ### Quickstart
 
 1. Figure out your Chrome version by clicking on the menu button at the top right corner > Help > About Chrome.

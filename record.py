@@ -17,7 +17,7 @@ def main():
     AM_TEMP = os.getenv("AM_TEMP")
     PM_TEMP = os.getenv("PM_TEMP")
 
-    if argv[1] == '--manual':
+    if len(argv) == 2 and argv[1] == '--manual':
         AM_TEMP = input("Key in your AM temperature:")
         PM_TEMP = input("Key in your PM temperature:")
 
